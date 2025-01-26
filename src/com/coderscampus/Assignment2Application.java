@@ -12,15 +12,17 @@ public class Assignment2Application {
 				
 		int randomNumber = random.nextInt(100) + 1;
 		int numberOfTries = 5;
+		int validGuess = 0;
 		boolean hasGuessCorrectly = false;
 		
-		for (int i = 0; i < numberOfTries; i++) {
+		 while (validGuess < numberOfTries && !hasGuessCorrectly) {
             System.out.print("pick a number between 1 - 100 ");
             int userInput = scanner.nextInt();
             if(userInput < 1 || userInput > 100) {
-            	System.out.println("Your guess is not between 1 and 100, please try again");
+            	System.out.println("Your guess is not between 1 and 100, please try again ");
             	continue;
             }
+            validGuess++;
             if(userInput == randomNumber){
             	hasGuessCorrectly = true;
             	break;
